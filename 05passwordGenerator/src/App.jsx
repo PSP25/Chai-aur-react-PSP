@@ -41,7 +41,7 @@ function App() {
     window.navigator.clipboard.writeText(password)//syntax to copy the text to the clipboard
   }, [password])
 
-  useEffect(() => {
+  useEffect(() => {//used to generate the password
     passwordGenerator()
   }, [length, numberAllowed, charAllowed, passwordGenerator])
   return (
