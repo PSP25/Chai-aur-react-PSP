@@ -6,11 +6,11 @@ import Card from './components/Card'
 
 function App() {
   const [count, setCount] = useState(0)
-  let myObj = {
+  let myObj = {//to pass object as prop
     username: "hitesh",
     age: 21
   }
-  let newArr = [1, 2, 3]
+  let newArr = [1, 2, 3]//to pass array as prop
 
   return (
     <>

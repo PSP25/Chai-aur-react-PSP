@@ -3,6 +3,7 @@ import { useState, useCallback, useEffect, useRef } from 'react'
 
 
 function App() {
+    //what variables we need
   const [length, setLength] = useState(8)
   const [numberAllowed, setNumberAllowed] = useState(false);
   const [charAllowed, setCharAllowed] = useState(false)
@@ -28,10 +29,16 @@ function App() {
 
   }, [length, numberAllowed, charAllowed, setPassword])
 
+
+  //important code snippet
+  //heklps to copy the password to the clipboard
   const copyPasswordToClipboard = useCallback(() => {
-    passwordRef.current?.select();
+    //the next two lines of code are used to select the text in the input field
+    passwordRef.current?.select();//it selects the text in the input field
     passwordRef.current?.setSelectionRange(0, 999);
-    window.navigator.clipboard.writeText(password)
+    //these above two lines explains the importance of useRef hook
+    //it givees the reference to the input field 
+    window.navigator.clipboard.writeText(password)//syntax to copy the text to the clipboard
   }, [password])
 
   useEffect(() => {
@@ -64,6 +71,7 @@ function App() {
         max={100}
         value={length}
          className='cursor-pointer'
+            //event is passed and we are getting the value of the input  
          onChange={(e) => {setLength(e.target.value)}}
           />
           <label>Length: {length}</label>
