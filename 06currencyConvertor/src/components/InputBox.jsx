@@ -5,7 +5,7 @@ function InputBox({
     amount,
     onAmountChange,
     onCurrencyChange,
-    currencyOptions = [],
+    currencyOptions = [], 
     selectCurrency = "usd",
     amountDisable = false,
     currencyDisable = false,
@@ -15,6 +15,8 @@ function InputBox({
 
     return (
         <div className={`bg-white p-3 rounded-lg text-sm flex ${className}`}>
+            //the above line is another method to add class name to the div, helps to add multiple class names 
+            //may be given by user
             <div className="w-1/2">
                 <label htmlFor={amountInputId}  className="text-black/40 mb-2 inline-block">
                     {label}
@@ -27,6 +29,8 @@ function InputBox({
                     disabled={amountDisable}
                     value={amount}
                     onChange={(e) => onAmountChange && onAmountChange(Number(e.target.value))}
+                    //above line first checks the existance of function and then calls it for better
+                    //productioin grade code
                 />
             </div>
             <div className="w-1/2 flex flex-wrap justify-end text-right">

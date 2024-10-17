@@ -11,6 +11,7 @@ import User from './components/User/User.jsx'
 import Github, { githubInfoLoader } from './components/Github/Github.jsx'
 
 // const router = createBrowserRouter([
+//createBrowserRouter is a method which has an array of objects, each object has a path and element key
 //   {
 //     path: '/',
 //     element: <Layout/>,
@@ -49,6 +50,9 @@ const router = createBrowserRouter(
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
+    //RouterProvider is a component that provides the router to the rest of the application
+    //we need to create router to render the components
+    //RouterProvider takes router as a prop
     <RouterProvider router={router} />
   </React.StrictMode>,
 )

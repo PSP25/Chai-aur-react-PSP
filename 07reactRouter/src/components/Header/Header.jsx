@@ -1,11 +1,15 @@
 import React from 'react'
 import {Link, NavLink} from 'react-router-dom'
-
+//link and navlink are used instead of 'a' tag of html here in router dom
+//why?: because in 'a' tag, when we click on the link, the page is reloaded everytime and the state is lost
+//but in link and navlink, the page is not reloaded and the state is not lost
+//navlink is used when we want to add some styles to the link when it is active(using iaActive prop)
 export default function Header() {
     return (
         <header className="shadow sticky z-50 top-0">
             <nav className="bg-white border-gray-200 px-4 lg:px-6 py-2.5">
                 <div className="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl">
+
                     <Link to="/" className="flex items-center">
                         <img
                             src="https://alexharkness.com/wp-content/uploads/2020/06/logo-2.png"
