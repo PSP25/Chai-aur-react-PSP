@@ -8,6 +8,10 @@ function App() {
   const [todos, setTodos] = useState([])
 
   const addTodo = (todo) => {
+    //theis below functioin will add the new todo at the top of the list
+    //the todos array has objects with id and text properties
+    //id is generated using Date.now() function
+    //and the default object is spreaded and the new todo object is added to the array
     setTodos((prev) => [{id: Date.now(), ...todo}, ...prev] )
   }
 
