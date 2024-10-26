@@ -38,7 +38,8 @@ export const todoSlice = createSlice({
         },
     }
 })
-
+//exporting all the action creators
 export const {addTodo, removeTodo} = todoSlice.actions
-
+//making the store abouth the reducers created by todoSlice
+//similarly we can have multiple reducers like login,password,theme etc
 export default todoSlice.reducer

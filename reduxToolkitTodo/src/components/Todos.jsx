@@ -3,6 +3,9 @@ import { useSelector, useDispatch } from 'react-redux'
 import {removeTodo} from '../features/todo/todoSlice'
 
 function Todos() {
+  //here we are using useSelector to get the state of the store
+  //and useDispatch to dispatch the action to the store
+  //we are getting the todos array from the store by state.todos
     const todos = useSelector(state => state.todos)
     const dispatch = useDispatch()
 
@@ -10,7 +13,9 @@ function Todos() {
     <>
     <div>Todos</div>
     <ul className="list-none">
-        {todos.map((todo) => (
+      {/* here we loop through the todo array and thus, */}
+        {todos.map((todo) => (//we donot use curly braces here because in that case we had to return a value
+          //but here we are just looping through the array and displaying the values  
           <li
             className="mt-4 flex justify-between items-center bg-zinc-800 px-4 py-2 rounded"
             key={todo.id}
@@ -18,6 +23,11 @@ function Todos() {
             <div className='text-white'>{todo.text}</div>
             <button
              onClick={() => dispatch(removeTodo(todo.id))}
+             //here we use a cllback instead for directly calling the function because in onClick we 
+             //need to pass a function that will be called when the button is clicked
+             //if we directly call the function it will be called as soon as the component is rendered
+             //so we some time give reference to the function that will be called when the button is clicked
+             //but then we cannot pass parameters in reference so we use callback function
               className="text-white bg-red-500 border-0 py-1 px-4 focus:outline-none hover:bg-red-600 rounded text-md"
             >
               <svg
